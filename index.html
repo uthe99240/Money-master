@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Monthly saving</title>
+    <link rel="stylesheet" href="style.css">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
@@ -14,7 +15,7 @@
     <header>
         <h2 class="text-center text-5xl font-bold mt-8 text-cyan-500">Bank Account</h2>
     </header>
-    <!-- maiin -->
+    <!-- main -->
     <main class="w-11/12 mx-auto">
         <section class="my-16 ">
             <div class=" sm:grid grid-cols-1 lg:grid grid-cols-2 gap-16 ">
@@ -23,56 +24,60 @@
                 </div>
                 <div class="bg-gray-200 text-center">
                     <div class="mt-8">
-                        <h1 class="text-center text-2xl font-semibold">Income</h1>
+                        <h1  class="text-center text-2xl font-semibold">Income</h1>
                     </div>
                     <div class="mt-4" >
                         <p class="inline text-xl">Income : </p>
-                        <input  type="text" name="" id="">
+                        <input id="income"  type="text" name="" id="">
                     </div>
                     <div class="mt-8">
                         <h1 class="text-center text-2xl font-semibold">Expenses</h1>
                     </div>
                     <div class="mt-4" >
                         <p class="inline text-xl">Food : </p>
-                        <input  type="text" name="" id="">
+                        <input id="food" type="text" name="" id="">
                     </div>
                     <div class="mt-4" >
                         <p class="inline text-xl">Rent : </p>
-                        <input  type="text" name="" id="">
+                        <input id="rent" type="text" name="" id="">
                     </div>
                     <div class="mt-4" >
                         <p class="inline text-xl">Clothes : </p>
-                        <input  type="text" name="" id="">
+                        <input id="clothes" type="text" name="" id="">
                     </div>
+                    <p id="notify-valid" class="notify text-red-500 font-semibold">Please enter valid numbers!!!</p>
+                    <p id="notify-expense" class="notify text-red-500 font-semibold">Sorry!! Expense more than income...</p>
                     <div class="mt-4">
-                        <button class="bg-cyan-500 text-white px-10 py-2 font-semibold rounded">Calculate</button>
+                        <button id="calculate" class="bg-cyan-500 text-white px-10 py-2 font-semibold rounded">Calculate</button>
                     </div>
                     <div class="mt-4" >
-                        <p class="inline text-xl font-semibold">Total Expenses : </p>
-                        <input class="bg-gray-200"  type="text" name="" id="">
+                        <p class="inline text-xl font-semibold">Total Expenses : <span id="TotalExpense" >0</span> </p>
+                        
                     </div><div class="mt-4" >
-                        <p class="inline text-xl font-semibold">Balance : </p>
-                        <input class="bg-gray-200" type="text" name="" id="">
+                        <p class="inline text-xl font-semibold">Balance : <span id="Balance" >0</span></p>
                     </div>
                     <div class="mt-4" >
                         <p class="inline text-xl">Save : </p>
-                        <input class="inline w-2/12"  type="text" name="" id="">
+                        <input id="saveInput" class="inline w-2/12"  type="text" name="" id="">
                         <p class="inline">%</p>
-                        <button class="bg-cyan-500 text-white px-10 py-2 font-semibold rounded">Save</button>
+                        <button id="saveButton" class="bg-cyan-500 text-white px-10 py-2 font-semibold rounded">Save</button>
                     </div>
+                    <p id="notify-saving" class="notify text-red-500 font-semibold">Sorry!! Try next month...</p>
                     <div class="mt-4" >
-                        <p class="inline text-xl font-semibold">Saving Amount : </p>
-                        <input class="bg-gray-200"  type="text" name="" id="">
+                        <p class="inline text-xl font-semibold">Saving Amount : <span id="savingAmount" >0</span></p>
+                        
                     </div><div class="my-4" >
-                        <p class="inline text-xl font-semibold">Remaining Balance : </p>
-                        <input class="bg-gray-200" type="text" name="" id="">
-                    </div>
-                    
+                        <p class="inline text-xl font-semibold">Remaining Balance : <span id="remaining">0</span></p>
+                        
+                    </div>  
                 </div>
             </div>
 
         </section>
     </main>
+                        <!-- javascript -->
+
+    <script src="javascript.js"></script>
 </body>
 
 </html>
