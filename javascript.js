@@ -43,11 +43,11 @@ document.getElementById('calculate').addEventListener('click', function () {
         const expenseError = document.getElementById('notify-expense');
         expenseError.style.display = 'none';
     }
-    else {       
+    else {
         if (income >= expenses) {
             const TotalExpense = document.getElementById("TotalExpense");
             TotalExpense.innerText = expenses;
-            
+
             const Balance = document.getElementById("Balance");
             Balance.innerText = income - expenses;
             const validError = document.getElementById('notify-valid');
@@ -73,9 +73,18 @@ document.getElementById('saveButton').addEventListener('click', function () {
     const incomeValue = parseFloat(Income());
     const expenseValue = parseFloat(totalExpense());
     const amount = (percentage * incomeValue) / 100;
-    
-    const savingAmount = document.getElementById("savingAmount");
-    savingAmount.innerText = amount;
-    const remainingBalance = document.getElementById('remaining');
-    remainingBalance.innerText = incomeValue - (expenseValue + amount);
+
+    if (incomeValue - (expenseValue + amount) >= 0) {
+        const savingAmount = document.getElementById("savingAmount");
+        savingAmount.innerText = amount;
+        const remainingBalance = document.getElementById('remaining');
+        remainingBalance.innerText = incomeValue - (expenseValue + amount);
+        const savingError = document.getElementById('notify-saving');
+        savingError.style.display = 'none';
+    }
+    else{
+        const savingError = document.getElementById('notify-saving');
+        savingError.style.display = 'block';
+    }
+
 })
